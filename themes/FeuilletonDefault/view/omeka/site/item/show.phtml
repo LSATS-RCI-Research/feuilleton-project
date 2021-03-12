@@ -10,7 +10,7 @@ $itemMedia = $item->media();
 <h3><?php echo $translate('Item'); ?></h3>
 <?php $this->trigger('view.show.before'); ?>
 <?php if ($embedMedia && $itemMedia): ?>
-    <div class="media-embeds">
+    <div class="media-embeds" id="thumbnail">
     <?php foreach ($itemMedia as $media):
         echo $media->render();
     endforeach;
@@ -49,6 +49,24 @@ $itemMedia = $item->media();
         <?php echo $media->linkPretty(); ?>
     <?php endforeach; ?>
 </div>
+<?php endif; ?>
+
+<?php if ($embedMedia && $itemMedia): ?>
+    <div class="media-embeds" id="original">
+    <?php foreach ($itemMedia as $media):
+        echo $media->render();
+    endforeach;
+    ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($embedMedia && $itemMedia): ?>
+    <div class="media-embeds" id="translation">
+    <?php foreach ($itemMedia as $media):
+        echo $media->render();
+    endforeach;
+    ?>
+    </div>
 <?php endif; ?>
 
 <?php

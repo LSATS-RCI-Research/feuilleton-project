@@ -9,14 +9,18 @@ $itemMedia = $item->media();
 <?php echo $this->pageTitle($item->displayTitle(), 2); ?>
 <h3><?php echo $translate('Item'); ?></h3>
 <?php $this->trigger('view.show.before'); ?>
+
+
 <?php if ($embedMedia && $itemMedia): ?>
-    <div class="media-embeds" id="thumbnail">
+    <!-- Thumbnail image -->
+	<div class="media-embeds" id="thumbnail">
     <?php foreach ($itemMedia as $media):
         echo $media->render();
     endforeach;
     ?>
     </div>
 <?php endif; ?>
+
 <section class="metadata">
 	<?php echo $item->displayValues(); ?>
 </section>
@@ -31,6 +35,26 @@ $itemMedia = $item->media();
 		<?php endif; ?>
 	</div>
 </section>
+<?php if ($embedMedia && $itemMedia): ?>
+    <!-- Text in original language -->
+	<div class="media-embeds" id="original">
+    <?php foreach ($itemMedia as $media):
+        echo $media->render();
+    endforeach;
+    ?>
+    </div>
+<?php endif; ?>
+
+<?php if ($embedMedia && $itemMedia): ?>
+    <!-- Text in translation -->
+	<div class="media-embeds" id="translation">
+    <?php foreach ($itemMedia as $media):
+        echo $media->render();
+    endforeach;
+    ?>
+    </div>
+<?php endif; ?>
+
 <section class="site_pages">
 	<?php if (($this->siteSetting('show_attached_pages', true)) && ($sitePages = $item->sitePages($site->id()))): ?>
 	<div class="property">
@@ -51,23 +75,7 @@ $itemMedia = $item->media();
 </div>
 <?php endif; ?>
 
-<?php if ($embedMedia && $itemMedia): ?>
-    <div class="media-embeds" id="original">
-    <?php foreach ($itemMedia as $media):
-        echo $media->render();
-    endforeach;
-    ?>
-    </div>
-<?php endif; ?>
 
-<?php if ($embedMedia && $itemMedia): ?>
-    <div class="media-embeds" id="translation">
-    <?php foreach ($itemMedia as $media):
-        echo $media->render();
-    endforeach;
-    ?>
-    </div>
-<?php endif; ?>
 
 <?php
 $page = $this->params()->fromQuery('page', 1);

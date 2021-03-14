@@ -34,7 +34,7 @@ $itemMedia = $item->media();
 </section>
 <?php if ($embedMedia && $itemMedia): ?>
   
-	<div class="media-embeds" id="original">
+	<div class="media-embeds">
     <?php foreach ($itemMedia as $media):
         echo $media->render();
     endforeach;

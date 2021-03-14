@@ -33,18 +33,8 @@ $itemMedia = $item->media();
 	</div>
 </section>
 <?php if ($embedMedia && $itemMedia): ?>
-    <!-- Text in original language -->
+  
 	<div class="media-embeds" id="original">
-    <?php foreach ($itemMedia as $media):
-        echo $media->render();
-    endforeach;
-    ?>
-    </div>
-<?php endif; ?>
-
-<?php if ($embedMedia && $itemMedia): ?>
-    <!-- Text in translation -->
-	<div class="media-embeds" id="translation">
     <?php foreach ($itemMedia as $media):
         echo $media->render();
     endforeach;

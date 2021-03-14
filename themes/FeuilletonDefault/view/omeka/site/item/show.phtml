@@ -11,15 +11,12 @@ $itemMedia = $item->media();
 <?php $this->trigger('view.show.before'); ?>
 
 
-<?php if ($embedMedia && $itemMedia): ?>
     <!-- Thumbnail image -->
-	<div class="media-embeds" id="thumbnail">
-    <?php foreach ($itemMedia as $media):
-        echo $media->render();
-    endforeach;
-    ?>
-    </div>
-<?php endif; ?>
+	<div id="thumbnail">
+	<?php if ($itemThumbnail = $this->thumbnail($item, 'medium')): ?>
+        <?php echo $item->linkRaw($itemThumbnail); ?>
+    <?php endif; ?>
+	</div>
 
 <section class="metadata">
 	<?php echo $item->displayValues(); ?>

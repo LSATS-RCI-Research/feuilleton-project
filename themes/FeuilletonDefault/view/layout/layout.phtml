@@ -54,6 +54,7 @@ $userBar = $this->userBar();
                 <?php endif; ?>
                 </a>
             </h1>
+			<h2>The Feuilleton &amp; Modern Jewish Cultures</h2>
             <div id="search">
                 <?php echo $this->partial('common/search-form'); ?>
             </div>
@@ -65,6 +66,16 @@ $userBar = $this->userBar();
             ]);
             ?>
             </nav>
+			<div id="hero">
+				<figure>
+					<img src="https://feuilleton.judaic.lsa.umich.edu/files/asset/5ea3fe5c2b4fc2c764c92c44023160e42d28c3f5.jpg" alt="Below the Line" />
+					<figcaption>Image copyright</figcaption>
+				</figure>	
+				<div id="vocab">
+					<p>feuil·​le·​ton (noun)</p>
+					<p id="vocab_definition">definition of the feuilleton</p>
+				</div>
+			</div>	
         </header>
         <div id="content" role="main">
             <?php echo $this->content; ?>

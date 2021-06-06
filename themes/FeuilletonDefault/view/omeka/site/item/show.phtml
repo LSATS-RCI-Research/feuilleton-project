@@ -39,11 +39,14 @@ $itemMedia = $item->media();
 </div>
 
 <div id="quick" class="quick">
-	<ul>
-		<li class="link"><a href="#media-embeds">Jump to Original Text</a></li>
-		<li class="link"><a href="#translation">Jump to Translation</a></li>
-		<li class="link"><a href="#commentary">Jump to Commentary</a></li>
-	</ul>	
+	<?php $itemSets = $item->itemSets(); ?>
+		<?php if (count($itemSets) > 0): ?>
+		<ul>
+			<li class="link"><a href="#media-embeds">Jump to Original Text</a></li>
+			<li class="link"><a href="#translation">Jump to Translation</a></li>
+			<li class="link"><a href="#commentary">Jump to Commentary</a></li>
+		</ul>
+	<?php endif; ?>	
 </div>
 
 <section id="metadata" class="metadata">

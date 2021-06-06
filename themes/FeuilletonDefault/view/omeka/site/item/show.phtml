@@ -38,6 +38,7 @@ $itemMedia = $item->media();
     <?php endif; ?>
 </div>
 
+<!-- Show quick links only for items that are part of the item set (Feuilletons) -->
 <div id="quick" class="quick">
 	<?php $itemSets = $item->itemSets(); ?>
 		<?php if (count($itemSets) > 0): ?>

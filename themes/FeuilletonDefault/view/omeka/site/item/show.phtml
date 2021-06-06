@@ -7,10 +7,6 @@ $itemMedia = $item->media();
 ?>
 
 <h2>Explore Feuilletons</h2>
-<?php echo $this->pageTitle($item->displayTitle(), 3); ?>
-
-<?php $this->trigger('view.show.before'); ?>
-
 <nav class="sub-menu">
 <ul class="navigation">
 	<li><a href="https://feuilleton.judaic.lsa.umich.edu/s/below-the-line/page/explore#authors">Authors</a></li>
@@ -19,6 +15,10 @@ $itemMedia = $item->media();
 	<li><a href="https://feuilleton.judaic.lsa.umich.edu/s/below-the-line/page/explore#places">Places</a></li>
 </ul>
 </nav>
+
+<?php echo $this->pageTitle($item->displayTitle(), 3); ?>
+
+<?php $this->trigger('view.show.before'); ?>
 
 <section class="item_sets">
 	<div class="property">

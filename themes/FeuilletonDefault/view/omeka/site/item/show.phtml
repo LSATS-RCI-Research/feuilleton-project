@@ -6,8 +6,9 @@ $embedMedia = $this->siteSetting('item_media_embed', false);
 $itemMedia = $item->media();
 ?>
 
-<?php echo $this->pageTitle($item->displayTitle(), 2); ?>
-<h3><?php echo $translate('Item'); ?></h3>
+<h2>Explore Feuilletons</h2>
+<?php echo $this->pageTitle($item->displayTitle(), 3); ?>
+
 <?php $this->trigger('view.show.before'); ?>
 
 <nav class="sub-menu">

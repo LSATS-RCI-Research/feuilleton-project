@@ -52,9 +52,10 @@ $userBar = $this->userBar();
                 <?php else: ?>
                     <?php echo $escape($siteTitle); ?>
                 <?php endif; ?>
-                </a>
-            <span><a href="<?php echo $site->url(); ?>" class="site-title">The Feuilleton &amp; Modern Jewish Cultures</a></span></h1>
-            <div id="search">
+				<span>The Feuilleton &amp; Modern Jewish Cultures</span></a>
+			</h1>
+            
+			<div id="search">
                 <?php echo $this->partial('common/search-form'); ?>
             </div>
 

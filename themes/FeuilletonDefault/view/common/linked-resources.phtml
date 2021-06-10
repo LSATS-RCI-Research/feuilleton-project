@@ -25,7 +25,6 @@ $pagination->setFragment($fragment);
 
 <?php foreach ($subjectValues as $term => $values): ?>
 <div>
-<caption class="linked-resource-property"><?php echo $escape($this->translate($values[0]->property()->label())); ?></caption>
 
     <?php foreach ($values as $value): ?>
     <?php
@@ -34,7 +33,7 @@ $pagination->setFragment($fragment);
     $altLabel = $templateProperty ? $templateProperty->alternateLabel() : null;
     ?>
     <div class="linked-resource">
-        <div><?php echo $value->resource()->linkPretty(); ?>
+        <?php echo $value->resource()->linkPretty(); ?>
         <?php if ($altLabel): ?>
         <span class="alternate-label"><?php echo $this->escapeHtml($altLabel); ?></span>
         <?php endif; ?>
@@ -42,7 +41,7 @@ $pagination->setFragment($fragment);
         <?php if ($value->resource()->resourceClass()): ?>
         <span class="resource-class"><?php echo $this->escapeHtml($translate($value->resource()->resourceClass()->label())); ?></span>
         <?php endif; ?>
-        </div>
+       
     </div>
     <?php endforeach; ?>
 

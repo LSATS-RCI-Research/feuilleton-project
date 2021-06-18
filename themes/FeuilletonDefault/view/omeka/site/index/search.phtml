@@ -5,16 +5,16 @@ $url = $this->plugin('url');
 $this->htmlElement('body')->appendAttribute('class', 'index search');
 ?>
 
-<?php echo $this->pageTitle(sprintf($translate('Search results for “%s”'), $query), 3); ?>
+<?php echo $this->pageTitle(sprintf($translate('Search Results for “%s”'), $query), 2); ?>
 
 <?php if (empty($results)): ?>
     <p><?php echo $translate('No result found'); ?></p>
 <?php else: ?>
 <?php
 $resourceLabels = [
-    'site_pages' => 'Site pages', // @translate
+    'site_pages' => 'Site Pages', // @translate
     'items' => 'Items', // @translate
-    'item_sets' => 'Item sets', // @translate
+    'item_sets' => 'Item Sets', // @translate
     'media' => 'Media', // @translate
 ];
 $resourceControllers = [
@@ -26,7 +26,7 @@ $resourceControllers = [
 ?>
     <?php foreach ($results as $resourceName => $result): ?>
 <div class="<?php echo $resourceName; ?> results">
-    <h2><?php echo $translate($resourceLabels[$resourceName]); ?></h2>
+    <h3><?php echo $translate($resourceLabels[$resourceName]); ?></h3>
 
         <?php $titleMethod = $resourceName === 'site_pages' ? 'title' : 'displayTitle'; ?>
     <ul>

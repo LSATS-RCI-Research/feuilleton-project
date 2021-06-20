@@ -18,14 +18,6 @@ $sortHeadings = [
         'label' => $translate('Identifier'),
         'value' => 'dcterms:identifier'
     ],
-    [
-        'label' => $translate('Class'),
-        'value' => 'resource_class_label'
-    ],
-    [
-        'label' => $translate('Created'),
-        'value' => 'created'
-    ],
 ];
 ?>
 
@@ -47,7 +39,8 @@ $sortHeadings = [
 <div class="browse-controls">
     <?php echo $this->searchFilters(); ?>
     <?php echo $this->hyperlink($translate('Advanced Search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
-    <?php echo $this->sortSelector($sortHeadings); ?>
+    <span id="sort_by">Sort By:</span>
+	<?php echo $this->sortSelector($sortHeadings); ?>
 </div>
 
 <?php $this->trigger('view.browse.before'); ?>
